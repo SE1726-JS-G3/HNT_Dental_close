@@ -1,0 +1,16 @@
+spring:
+  flyway:
+    enabled: true
+    locations: classpath:/db/migration
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:hnt_dental}?useUnicode=true&characterEncoding=UTF-8&rewriteBatchedStatements=TRUE
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.hnt.dental.entities
+
+server:
+  port: ${ISMS_PORT:8080}
